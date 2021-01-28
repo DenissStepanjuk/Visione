@@ -29,7 +29,7 @@ class Attendance:
         # reconnect - обновить соединение с базой данных
         # reconnect - обновить соединение с базой данных
         db.reconnect()
-        sql = "INSERT INTO Attendance (userID, partofdayID, attendance, late, time) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO attendance (userid_userid, part_of_dayid_part_of_dayid, attendance, late, time) VALUES (%s, %s, %s, %s, %s)"
         val = (self.userID, self.partofdayID, self.attendance, self.late, self.time)
         cursor.execute(sql, val)
         db.commit()
@@ -37,7 +37,7 @@ class Attendance:
     # если человека на видео нет в списке пришедших, то заносим его в базу
     def markAttendance(self):
       usersIDAttendance = []
-      sql = "SELECT userID FROM Attendance WHERE partofdayID='" + str(self.partofdayID) + "'"
+      sql = "SELECT userid_userid FROM Attendance WHERE part_of_dayid_part_of_dayid='" + str(self.partofdayID) + "'"
       cursor.execute(sql)
       usersID = cursor.fetchall()
       for x in usersID:

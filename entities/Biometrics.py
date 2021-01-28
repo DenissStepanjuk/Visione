@@ -34,7 +34,7 @@ class Biometrics:
     def getEncodePath(self, users):
         EcodePath = []
         for x in users:
-            sql = "SELECT pathEncode FROM Biometrics WHERE userID = '" + str(x) + "'"
+            sql = "SELECT path_encode FROM biometrics WHERE biometricsid = '" + str(x-1) + "'"
             cursor.execute(sql)
             path = cursor.fetchall()
             EcodePath.append(path[0][0])
