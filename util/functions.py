@@ -18,7 +18,7 @@ def connect():
             user="root",
             passwd='qwerty',
             port='3306',
-            database='visione')
+            database='tort')
     cursor = db.cursor()
     return db, cursor
 
